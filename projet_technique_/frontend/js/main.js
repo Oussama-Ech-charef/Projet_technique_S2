@@ -8,7 +8,7 @@ const tabele = document.getElementById("table_category");
 
 const form = document.getElementById("form_category");
 
-const btnajoute = document.getElementById("btn_nouvelle");
+const btnajoute = document.getElementById("btn_addcategory");
 
 const btnannuler = document.getElementById("btn_annuler");
 
