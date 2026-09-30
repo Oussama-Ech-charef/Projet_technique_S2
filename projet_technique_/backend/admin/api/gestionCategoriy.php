@@ -43,14 +43,14 @@ class gestionCategoriy {
 
         $categoriy[] = [
 
-            "id_categoriy" => count($categoriy) + 1,
+            "id_category" => count($categoriy) + 1,
             "nom_category" => $data["nom_category"],
             "description" => $data["description"]
         ];
 
 
 
-        file_put_contents($this->path_file, json_decode($categoriy, JSON_PRETTY_PRINT));
+        file_put_contents($this->path_file, json_encode($categoriy, JSON_PRETTY_PRINT));
 
 
         echo json_encode($categoriy);

@@ -79,7 +79,7 @@ if (form) {
             method: "POST",
             headers: {"content-type":"application/json"},
             body:JSON.stringify({
-                nomcategory:nomcategory.value,
+                nom_category:nomcategory.value,
                 description:description.value
             })
 
@@ -92,8 +92,10 @@ if (form) {
             afficherCategory();
             
         })
-        .catch(error => 
+        .catch(error => {
+
             console.error(error)
+        }
             
         )
     })
