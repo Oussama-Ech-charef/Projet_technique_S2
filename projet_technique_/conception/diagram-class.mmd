@@ -1,0 +1,82 @@
+classDiagram
+    direction TB
+
+    class ORGANISATEUR {
+        -int id_organisateur
+        -string nom
+        -string email
+        -string mot_de_passe
+        -enum role
+
+        +getIdOrganisateur() int
+        +setIdOrganisateur(int id) void
+        +getNom() string
+        +setNom(string nom) void
+        +getEmail() string
+        +setEmail(string email) void
+        +getMotDePasse() string
+        +setMotDePasse(string mot_de_passe) void
+        +getRole() enum
+        +setRole(enum role) void
+    }
+
+    class EVENEMENT {
+        -int id_evenement
+        -string titre
+        -text content
+        -string image
+        -date date_evenement
+        -datetime date_publication
+        -text lieu
+        -decimal prix
+        -enum status
+        -time heure_evenement
+        -int nombre_places
+        -date date_fin
+
+        +getIdEvenement() int
+        +setIdEvenement(int id) void
+        +getTitre() string
+        +setTitre(string titre) void
+        +getContent() text
+        +setContent(text content) void
+        +getImage() string
+        +setImage(string image) void
+        +getDateEvenement() date
+        +setDateEvenement(date date) void
+        +getDatePublication() datetime
+        +setDatePublication(datetime date) void
+        +getLieu() text
+        +setLieu(text lieu) void
+        +getPrix() decimal
+        +setPrix(decimal prix) void
+        +getStatus() enum
+        +setStatus(enum status) void
+        +getHeureEvenement() time
+        +setHeureEvenement(time heure) void
+        +getNombrePlaces() int
+        +setNombrePlaces(int nombre) void
+        +getDateFin() date
+        +setDateFin(date date) void
+        +publier() void
+        +modifierStatut(enum status) void
+    }
+
+    class CATEGORY {
+        -int id_category
+        -string nom_category
+        -text description
+
+        +getIdCategory() int
+        +setIdCategory(int id) void
+        +getNomCategory() string
+        +setNomCategory(string nom) void
+        +getDescription() text
+        +setDescription(text description) void
+    }
+
+    note for ORGANISATEUR "email est unique; role = admin ou user"
+    note for EVENEMENT "status = publish ou draft; date_fin est facultative"
+
+    ORGANISATEUR "1" --> "0..*" EVENEMENT : organise
+    CATEGORY "1" --> "0..*" EVENEMENT : classe

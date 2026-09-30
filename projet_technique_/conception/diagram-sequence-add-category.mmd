@@ -1,0 +1,18 @@
+sequenceDiagram
+    actor administrateur
+    participant interface as Interface web
+    participant api as API PHP
+    participant base as Base de données MySQL
+
+    administrateur->>interface: ouvre le formulaire d'ajout
+    interface-->>administrateur: affiche le formulaire
+    administrateur->>interface: saisit le nom et la description
+    alt un champ est vide
+        interface-->>administrateur: demande de remplir les champs obligatoires
+    else les champs sont remplis
+        interface->>api: envoie les données avec une requête POST
+        api->>base: insère la nouvelle catégorie
+        base-->>api: confirme l'enregistrement
+        api-->>interface: retourne les catégories en JSON
+        interface-->>administrateur: actualise le tableau
+    end

@@ -1,6 +1,3 @@
-
-
-
 const API_URL = "../../backend/admin/api/gestionCategoriy.php";
 
 const tabele = document.getElementById("table_category");
@@ -100,5 +97,3 @@ if (form) {
         )
     })
 }
-
-

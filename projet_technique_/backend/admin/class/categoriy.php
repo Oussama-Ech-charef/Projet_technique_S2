@@ -11,7 +11,8 @@ class categoriy {
     
 
     
-    public function __construct(string $nom_category = "", string $description = "") {
+    public function __construct(int $id_category = 0, string $nom_category = "", string $description = "") {
+        $this->id_category = $id_category;
         $this->nom_category = $nom_category;
         $this->description = $description;
     }
