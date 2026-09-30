@@ -13,5 +13,10 @@
         "id_category": 3,
         "nom_category": "adf",
         "description": "asdf"
+    },
+    {
+        "id_category": 4,
+        "nom_category": "",
+        "description": ""
     }
 ]
