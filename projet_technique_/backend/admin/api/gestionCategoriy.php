@@ -41,23 +41,34 @@ class gestionCategoriy {
 
 
 
-        $categoriy[] = [
+        $nom_category = trim($data["nom_category"] ?? "");
+        $description = trim($data["description"] ?? "");
 
-            "id_category" => count($categoriy) + 1,
-            "nom_category" => $data["nom_category"],
-            "description" => $data["description"]
+
+        if (strlen($nom_category) < 2 || strlen($description) < 10) {
+            echo json_encode(["message" => "Verefie"]);
+            return;
+        }
+
+        $nouvelleCategory = new categoriy($nom_category,$description );
+        $nouvelleCategory->setIdCategory(count($categoriy) + 1);
+
+         $categoriy[] = [
+        "id_category" => $nouvelleCategory->getIdCategory(),
+        "nom_category" => $nouvelleCategory->getNom(),
+        "description" => $nouvelleCategory->getDiscription()
         ];
 
-
-
-        file_put_contents($this->path_file, json_encode($categoriy, JSON_PRETTY_PRINT));
-
+        file_put_contents(
+            $this->path_file,
+            json_encode($categoriy, JSON_PRETTY_PRINT)
+        );
 
         echo json_encode($categoriy);
+}
 
 
-    }
-
+    
 
     public function traiterRequete(){
 

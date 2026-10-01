@@ -8,10 +8,5 @@
         "id_category": 2,
         "nom_category": "genreTest",
         "description": "Business and professional events"
-    },
-    {
-        "id_category": 3,
-        "nom_category": "adf",
-        "description": "asdf"
     }
 ]

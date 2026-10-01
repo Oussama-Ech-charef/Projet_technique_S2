@@ -5,30 +5,31 @@
 
 class categoriy {
 
-    private int $id_category;
-    private string $nom_category;
-    private string $description;
+    private int $id_category = 0;
+    private string $nom_category ;
+    private string $description ;
     
 
-    
-    public function __construct(int $id_category = 0, string $nom_category = "", string $description = "") {
-        $this->id_category = $id_category;
-        $this->nom_category = $nom_category;
+    public function __construct(string $nom, string $description) {
+        $this->nom_category = $nom;
         $this->description = $description;
     }
 
+
+    public function getIdCategory() : int {
+        return $this->id_category;
+    }
+
+
+    public function setIdCategory(int $id): void {
+        $this->id_category = $id;
+    }
 
 
     public function getNom() : string {
         return $this->nom_category;
     }
 
-
-    public function setNom(string $nom_category) : void {
-        if (strlen($nom_category) >= 2) {
-            $this->nom_category = $nom_category;
-        }
-    }
 
 
     public function getDiscription() : string {
@@ -37,11 +38,6 @@ class categoriy {
 
 
 
-    public function setDiscription(string $description) : void {
-        if (strlen($description) >= 10) {
-            $this->description = $description;
-        }
-    }
 
 
 

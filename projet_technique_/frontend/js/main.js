@@ -23,7 +23,7 @@ function afficherCategory () {
     fetch(API_URL)
     .then(response => response.json())
     .then(category => {
-        if (tabele) {
+        
             tabele.innerHTML = "";
 
             category.forEach(cat => {
@@ -44,7 +44,7 @@ function afficherCategory () {
                     `);
                 
             });
-        }
+        
     })
     .catch(error => {
         console.error(error);
@@ -68,8 +68,6 @@ btnannuler.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => afficherCategory());
 
-
-if (form) {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         fetch(API_URL, {
@@ -83,7 +81,6 @@ if (form) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             form.reset()
             sectionform.classList.add("hidden")
             afficherCategory();
@@ -96,4 +93,4 @@ if (form) {
             
         )
     })
-}
+
