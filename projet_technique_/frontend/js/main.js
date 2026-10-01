@@ -63,6 +63,7 @@ btnajoute.addEventListener("click", () => {
 
 btnannuler.addEventListener("click", () => {
     sectionform.classList.add("hidden")
+    form.reset()
 });
 
 
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => afficherCategory());
         event.preventDefault();
         fetch(API_URL, {
             method: "POST",
-            headers: {"content-type":"application/json"},
+            headers: {"Content-yTpe":"application/json"},
             body:JSON.stringify({
                 nom_category:nomcategory.value,
                 description:description.value
