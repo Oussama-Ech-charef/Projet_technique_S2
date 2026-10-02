@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestion de category</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-screen">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-gray-800 text-white p-8">
+            <h1 class="mb-8 text-2xl font-bold">dashboard</h1>
+
+            <nav>
+                <a href="#" class="block p-3 rounded bg-orange-500"> category</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <div class="flex itms-center justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold">gestion de category</h2>
+                </div>
+
+                <button id="btn_add" class="rounded font-bold bg-orange-500 p-3">add category</button>
+            </div>
+
+            <div>
+                <h3>ajoute un category</h3>
+
+
+                <form id="form_category">
+                    <label class="block">nom category</label>
+                    <input type="text"  class="border" id="nom_category">
+                    <label class="block">description de category</label>
+                    <textarea class="border" id="description"></textarea>
+
+
+                    <button type="submit" class="rounded bg-orange-500 p-2 px-2 py-2">Enregister</button>
+                    <button type="button" class="rounded bg-gray-500 p-2 text-white">annuler</button>
+                </form>
+            </div>
+
+
+            <div class="bg-white">
+                <table class="w-full">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <td>ID</td>
+                            <td>Nom category</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody id="form_tabel"></tbody>
+
+                </table>
+            </div>
+        </main>
+        
+    </div>
+
+
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
