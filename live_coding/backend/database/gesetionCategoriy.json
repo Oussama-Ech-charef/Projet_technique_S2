@@ -1,0 +1,22 @@
+[
+    {
+        "id_category": 1,
+        "nom_category": "Music",
+        "description": "Music events and concerts"
+    },
+    {
+        "id_category": 2,
+        "nom_category": "asdfasfasfdasd",
+        "description": "adsfffffffffffff"
+    },
+    {
+        "id_category": 3,
+        "nom_category": "asdfasfasf",
+        "description": "asdfasdfsadf"
+    },
+    {
+        "id_category": 4,
+        "nom_category": "hhhhhhhh",
+        "description": "jjjjjjjjjjjjjjjjjjjjjj"
+    }
+]
